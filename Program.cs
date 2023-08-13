@@ -2,4 +2,8 @@
 
 var parser = new Parser();
 
-parser.ReadTransactions();
+var transactionList = parser.ReadTransactions();
+
+var account = new Account("Tim L", transactionList);
+account.GetTotalAmountDue();
+account.GetTotalAmountOwed();
