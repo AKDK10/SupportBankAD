@@ -7,10 +7,10 @@ public class Account
     public string Name { get; }
     public List<Transaction> Transactions { get; }
 
-    public Account(string name, List<Transaction> transactions)
+    public Account(string name)
     {
         this.Name = name;
-        this.Transactions = transactions;
+        this.Transactions = new List<Transaction>();
     }
 
 
@@ -24,7 +24,7 @@ public class Account
                 amountBorrowed += transaction.Amount;
             }
         }
-        Console.WriteLine($"Account name{this.Name} has borrowed £{amountBorrowed}");
+        Console.WriteLine($"Account name {this.Name} has borrowed £{amountBorrowed}");
     }
 
     public void GetTotalAmountDue()

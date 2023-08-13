@@ -3,7 +3,11 @@
 var parser = new Parser();
 
 var transactionList = parser.ReadTransactions();
+var bank = new Bank(transactionList);
 
-var account = new Account("Tim L", transactionList);
-account.GetTotalAmountDue();
-account.GetTotalAmountOwed();
+foreach (var account in bank.GetAccounts())
+{
+    account.GetTotalAmountDue();
+    account.GetTotalAmountOwed();
+}
+
